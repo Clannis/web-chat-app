@@ -3,10 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ActionCableProvider } from "react-actioncable-provider";
+import { API_WS_ROOT } from "./constants";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ActionCableProvider url={API_WS_ROOT}>
+      <App />
+    </ActionCableProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
